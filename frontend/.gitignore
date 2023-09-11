@@ -14,8 +14,8 @@ dist-ssr
 
 # Secret File for variables
 .env
-.env*
-/backend/.env
+*.env
+**/*.env
 
 yarn.lock
 
