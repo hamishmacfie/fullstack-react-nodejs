@@ -10,6 +10,7 @@ connectDB();
 // Middleware
 app.use(express.json());
 
+// Set the port from .env with fallback of 8080
 const PORT = process.env.PORT || 8080;
 
 // Routes
