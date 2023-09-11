@@ -16,4 +16,13 @@ const getAllNotes = asyncHandler(async (req, res) => {
   }
 });
 
+const createNote = asyncHandler(async (req, res) => {
+  try {
+  } catch (error) {
+    res
+      .status(400)
+      .json({ message: "Sorry, there was an error creating a new note" });
+  }
+});
+
 module.exports = getAllNotes;
