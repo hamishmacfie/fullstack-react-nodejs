@@ -13,7 +13,8 @@ dist-ssr
 *.local
 
 # Secret File for variables
-.env
+.env*
+backend/.env*
 
 # Editor directories and files
 .vscode/*
