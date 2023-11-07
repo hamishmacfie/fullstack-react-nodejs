@@ -1,10 +1,39 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout";
+import Error from "./pages/Error";
+import Dashboard from "./pages/Dashboard";
+import Wordcounter from "./pages/Wordcounter";
+import ImageCard from "./pages/ImageCard";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <Dashboard />,
+        errorElement: <Error />
+      },
+      {
+        path: "/wordcount",
+        element: <Wordcounter />,
+        errorElement: <Error />
+      },
+      {
+        path: "/image",
+        element: <ImageCard />,
+        errorElement: <Error />
+      }
+    ]
+  }
+]);
+
 function App() {
   return (
     <>
-      <div className="w-full flex flex-col justify-center items-center h-screen">
-        <h1 className="text-2xl">SRECMS Full Stack</h1>
-        <div className="text-lg">Barebones framework with Tailwind CSS</div>
-      </div>
+      <RouterProvider router={router} />
     </>
   );
 }
